@@ -49,8 +49,8 @@
 ## Политика паролей:
 #####  Открой файл common.password в папке /etc/pam.d
 	
-	password        requisite       pam_pwquality.so minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 retry=3 usercheck=1 difok=7
-	password        requisite       pam_pwquality.so minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 retry=3 usercheck=1 enforce_for_root
+	password requisite pam_pwquality.so minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 retry=3 usercheck=1 difok=7
+	password requisite pam_pwquality.so minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 retry=3 usercheck=1 enforce_for_root
 	
 	Действие пароля должно истекать каждые 30 дней
 	Минимальное кол-во дней до смены пороля 2 дня
