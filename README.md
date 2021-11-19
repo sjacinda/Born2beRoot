@@ -14,8 +14,10 @@
 	$ usermod -G"" <name_user> // удалить пользователя из всех групп
 	$ chage -l <name_user> // проверить кофигурации пароля пользователя
 	
+	
+	
 ## Скрипт который пригодится:
-##### Этот скрипт должен лежать в файле monitoring.sh по адрусу /usr/local/bin
+##### Этот скрипт должен лежать в файле monitoring.sh по адрусу: /usr/local/bin
 	#!/bin/bash
 	wall $'#Architecture:' `uname -a` \
 	$'\n#CPU physical : '`nproc` \
