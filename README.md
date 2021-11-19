@@ -2,6 +2,14 @@
 
 
 ## Основные команды:
+	$ lsblk // показать информацию о дисках и разделах
+	$ nano /etc/ssh/sshd_config // открыть конфиг ssh
+	$ nano /etc/sudoers // открыть конфиг sudo
+	$ /Users/sjacinda/.ssh/known_hosts // если есть проблема с доступом по ssh
+	$ nano /var/log/sudo/sudo/sudo.log // открыть файл в котором есть все команды с судо
+	$ nano /etc/pam.d/common-password // открыть файл политик паролей
+	$ nano /usr/local/bin/monitoring.sh // открыт файл со скриптом
+ 	
 	$ adduser <user_name> // создать пользователя
 	$ userdel <user_name> // удалить пользователя и файлы
 	$ lastlog // показать пользователей и даты последнего входа в систему
