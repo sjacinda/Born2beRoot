@@ -30,3 +30,12 @@
 	$'\n#User log:' `who | wc -l` \
 	$'\nNetwork: IP' `hostname -I`"("`ip a | grep link/ether | awk '{print $2}'`")" \
 	$'\n#Sudo :' `cat /var/log/sudo/sudo.log | grep COMMAND | wc -l` "cmd"
+
+
+## Скрипт для сервиса Cron:
+#### Используй комнаду crontab -e для пользователя root
+	*/10 * * * * /usr/local/bin/monitoring.sh // команда для реализации скрипта каждые 10 мин.
+	* * * * *              /usr/local/bin/monitoring.sh // команда для реализаии скрипта кадую минуту
+	* * * * * ( sleep 15 ; /usr/local/bin/monitoring.sh ) // команда для реализции скрипта каждую минуту с задержкой в 15 сек.
+	* * * * * ( sleep 30 ; /usr/local/bin/monitoring.sh ) // команда для реализции скрипта каждую минуту с задержкой в 30 сек.
+	* * * * * ( sleep 45 ; /usr/local/bin/monitoring.sh ) // команда для реализции скрипта каждую минуту с задержкой в 45 сек.
