@@ -6,7 +6,7 @@
 	$ nano /etc/ssh/sshd_config // открыть конфиг ssh
 	$ nano /etc/sudoers // открыть конфиг sudo
 	$ /Users/sjacinda/.ssh/known_hosts // если есть проблема с доступом по ssh
-	$ nano /var/log/sudo/sudo/sudo.log // открыть файл в котором есть все команды с судо
+	$ nano /var/log/sudo/sudo.log // открыть файл в котором есть все команды с судо
  	
 	$ adduser <user_name> // создать пользователя
 	$ userdel <user_name> // удалить пользователя и файлы
