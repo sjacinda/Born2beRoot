@@ -32,7 +32,7 @@
 	$ ufw delete <number_port> // удалить номер порта
 	
 ## Скрипт для файла monitoring.sh:
-##### $ nano /usr/local/bin/monitoring.sh // открыть файл
+##### $ nano /usr/local/bin/monitoring.sh
 	#!/bin/bash
 	wall $'#Architecture:' `uname -a` \
 	$'\n#CPU physical : '`nproc` \
@@ -49,7 +49,7 @@
 
 
 ## Скрипт для сервиса Cron:
-##### $ crontab -e // открыть файл
+##### $ crontab -e
 	*/10 * * * * /usr/local/bin/monitoring.sh // запускает скрипт каждые 10 мин.
 	* * * * *              /usr/local/bin/monitoring.sh // запускает скрипт кадую минуту
 	* * * * * ( sleep 15 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой в 15 сек.
@@ -58,7 +58,7 @@
 	
 	
 ## Политика паролей:
-##### $ nano /etc/pam.d/common-password // открыть файл
+##### $ nano /etc/pam.d/common-password
 	password requisite pam_pwquality.so minlen=10 ucredit=-1 lcredit=-1 \
 	dcredit=-1 maxrepeat=3 retry=3 usercheck=1 enforce_for_root // правила для root
 	
