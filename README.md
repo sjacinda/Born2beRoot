@@ -1,9 +1,9 @@
 # Born2beRoot
 
 
-## Основные команды:
+## __Основные команды:__
 	$ lsblk // показать информацию о дисках и разделах
-	$ nano /etc/ssh/sshd_config // _открыть_ конфиг ssh
+	$ nano /etc/ssh/sshd_config // открыть конфиг ssh
 	$ nano /etc/sudoers // открыть конфиг sudo
 	$ /Users/sjacinda/.ssh/known_hosts // если есть проблема с доступом по ssh
 	$ nano /var/log/sudo/sudo.log // открыть файл в котором есть все команды с судо
