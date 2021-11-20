@@ -28,8 +28,8 @@
 	$ hostname <new_hostname> // поменять имя хоста
 	
 	$ ufw allow <new_port> // создать новый порт
-	$ ufw allow ststus numbered // показать все порты
-	$ ufw delete <number_port> // удалить номер порта
+	$ ufw ststus numbered // показать все порты с порядковым номером
+	$ ufw delete <port_number> // удалить порт по порядковому номеру
 	
 ## Скрипт для файла monitoring.sh:
 ##### $ nano /usr/local/bin/monitoring.sh
