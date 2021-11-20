@@ -32,6 +32,20 @@
 	$ ufw allow <new_port> // создать новый порт
 	$ ufw allow ststus numbered // показать все порты
 	$ ufw delete <number_port> // удалить номер порта
+
+
+## Как разбить диск с помощью LVM для бонусной части?
+<img width="516" alt="Screen Shot 2021-11-20 at 3 11 58 PM" src="https://user-images.githubusercontent.com/90088815/142725850-577d1bf9-2348-46f1-b8f3-8cbdf7303f34.png">
+
+	Раздел		нужный объём памяти в MB
+	sda1		525
+	sda5-root	10 740
+	sda5-swap	2 469
+	sda5-home	5 327
+	sda5-var	3 225
+	sda5-srv	3 225
+	sda5-tmp	3 225
+	sda5-var-log	4 280
 	
 	
 ## Скрипт для файла monitoring.sh:
