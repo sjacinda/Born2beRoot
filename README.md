@@ -1,6 +1,23 @@
 # Born2beRoot
 
-
+## Полезные ссылки:
+	Перевод subject на русский: 
+	https://brazen-pisces-be4.notion.site/Born2beRoot-21f39bb2344744cc9175c5c4241c099d
+	
+	Если не знаешь с чего начать:
+	https://www.youtube.com/watch?v=13YBlD0SOJo&ab_channel=mmargene
+	https://www.youtube.com/watch?v=YC5ygt5Sk3Y&ab_channel=mmargene
+	
+	Обрати внимание на этот видео-разбор. Доступно и лаконично. Текстовый вариант разбора выложен на GitHub.
+	https://www.youtube.com/watch?v=7GvJaPuJ2ko&ab_channel=Bakyt
+	https://github.com/codesshaman/born2beRoot
+	
+	Дополнительные материалы
+	https://baigal.medium.com/born2beroot-e6e26dfb50ac
+	https://github.com/search?q=born2beroot
+	
+	
+	
 ## Основные команды:
 	$ lsblk // показать информацию о дисках и разделах
 	$ nano /etc/ssh/sshd_config // открыть конфиг ssh
