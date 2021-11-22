@@ -1,30 +1,13 @@
 # Born2beRoot
 
-## Полезные ссылки:
-	Перевод subject на русский: 
-	https://brazen-pisces-be4.notion.site/Born2beRoot-21f39bb2344744cc9175c5c4241c099d
-	
-	Если не знаешь с чего начать:
-	https://www.youtube.com/watch?v=13YBlD0SOJo&ab_channel=mmargene
-	https://www.youtube.com/watch?v=YC5ygt5Sk3Y&ab_channel=mmargene
-	
-	Обрати внимание на этот видео-разбор. Доступно и лаконично. Текстовый вариант разбора выложен на GitHub.
-	https://www.youtube.com/watch?v=7GvJaPuJ2ko&ab_channel=Bakyt
-	https://github.com/codesshaman/born2beRoot
-	
-	Дополнительные материалы
-	https://baigal.medium.com/born2beroot-e6e26dfb50ac
-	https://github.com/search?q=born2beroot
-	
-	
-	
+
 ## Основные команды:
 	$ lsblk // показать информацию о дисках и разделах
 	$ nano /etc/ssh/sshd_config // открыть конфиг ssh
 	$ nano /etc/sudoers // открыть конфиг sudo
-	$ /Users/sjacinda/.ssh/known_hosts // если есть проблема с доступом по ssh
-	$ nano /var/log/sudo/sudo.log // открыть файл в котором есть все команды с судо
- 	
+	$ nano /Users/sjacinda/.ssh/known_hosts // если есть проблема с доступом по ssh
+	$ nano /var/log/sudo/sudo.log // открыть файл истории использования команды sudo
+
 	$ adduser <user_name> // создать пользователя
 	$ userdel <user_name> // удалить пользователя и файлы
 	$ lastlog // показать пользователей и даты последнего входа в систему
@@ -35,19 +18,18 @@
 	
 	$ usermod -aG <group_name> <user_name> // добавить пользователя в группу
 	$ gpasswd -d <group_name> <user_name> // удалить пользователя из группы
-	$ usermod -G"" <user_name> // удалить пользователя из всех групп
 	
 	$ passwd <user_name> // сменить пароль пользователя
 	$ passwd -S <user_name> // посмотреть информацию о пароле пользователя
 	$ chage -l <user_name> // посмотреть расширенную информацию о пароле пользователя
-		
-	$ service --status-all // просмотреть все запущенные сервисы
-	$ hostname <new_hostname> // поменять имя хоста
 	
 	$ ufw allow <new_port> // создать новый порт
-	$ ufw ststus numbered // показать все порты с порядковым номером
+	$ ufw status numbered // показать все порты
 	$ ufw delete <port_number> // удалить порт по порядковому номеру
-	
+
+	$ hostname <new_hostname> // сменить имя хоста
+	$ service --status-all // просмотреть все сервисы
+
 ## Скрипт для файла monitoring.sh:
 ##### $ nano /usr/local/bin/monitoring.sh
 	#!/bin/bash
@@ -66,14 +48,14 @@
 
 
 ## Скрипт для сервиса Cron:
-##### $ crontab -e
+##### $ nano crontab -e
 	*/10 * * * * /usr/local/bin/monitoring.sh // запускает скрипт каждые 10 мин.
-	* * * * *              /usr/local/bin/monitoring.sh // запускает скрипт кадую минуту
-	* * * * * ( sleep 15 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой в 15 сек.
-	* * * * * ( sleep 30 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой в 30 сек.
-	* * * * * ( sleep 45 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой в 45 сек.
-	
-	
+	* * * * * /usr/local/bin/monitoring.sh // запускает скрипт кадую минуту
+	* * * * * ( sleep 15 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 15 сек.
+	* * * * * ( sleep 30 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 30 сек.
+	* * * * * ( sleep 45 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 45 сек.
+
+
 ## Политика паролей:
 ##### $ nano /etc/pam.d/common-password
 	password requisite pam_pwquality.so minlen=10 ucredit=-1 lcredit=-1 \
