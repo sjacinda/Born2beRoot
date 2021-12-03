@@ -17,7 +17,7 @@
 	$ getent group // показать группы и связанных с ними пользователей
 	
 	$ usermod -aG <group_name> <user_name> // добавить пользователя в группу
-	$ gpasswd -d <group_name> <user_name> // удалить пользователя из группы
+	$ gpasswd -d <user_name> <group_name> // удалить пользователя из группы
 	
 	$ passwd <user_name> // сменить пароль пользователя
 	$ passwd -S <user_name> // посмотреть информацию о пароле пользователя
