@@ -49,7 +49,7 @@
 
 ## Скрипт для сервиса Cron:
 ##### $ nano crontab -e
-	*/10 * * * * /usr/local/bin/monitoring.sh // запускает скрипт каждые 10 мин.
+	*/10 * * * * bash /usr/local/bin/monitoring.sh // запускает скрипт каждые 10 мин.
 	* * * * * /usr/local/bin/monitoring.sh // запускает скрипт кадую минуту
 	* * * * * ( sleep 15 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 15 сек.
 	* * * * * ( sleep 30 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 30 сек.
