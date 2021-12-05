@@ -1,6 +1,9 @@
 # Born2beRoot
 
 
+## Немного воды:
+	Цель проекта - познакомится с виртуальной машиной под управлением Debian или CentOS, а так же настроить базовые инструменты для работы.
+		
 ## Основные команды:
 	$ lsblk // показать информацию о дисках и разделах
 	$ nano /etc/ssh/sshd_config // открыть конфиг ssh
@@ -29,13 +32,15 @@
 
 	$ hostname <new_hostname> // сменить имя хоста
 	$ service --status-all // просмотреть все сервисы
+	$ reboot // перезагрузить систему
+	$ shasum <project_name.vdi> // cборка подписи виртуального диска
 
 ## Скрипт для файла monitoring.sh:
 ##### $ nano /usr/local/bin/monitoring.sh
 	#!/bin/bash
 	wall $'#Architecture:' `uname -a` \
-	$'\n#CPU physical : '`nproc` \
-	$'\n#vCPU :' `cat /proc/cpuinfo | grep processor | wc -l` \
+	$'\n#CPU physical: '`nproc` \
+	$'\n#vCPU:' `cat /proc/cpuinfo | grep processor | wc -l` \
 	$'\n#Memory Usage:' `free -m | grep Mem | awk '{printf "%d/%d (%.1f%%)", $3, $2, $3*100/$2}'` \
 	$'\n#Disk Usage: '`df -h | grep root | awk '{print $3"/"$2" ("$5")"}'` \
 	$'\n#CPU load: '`cat /proc/loadavg | awk '{printf "%.1f%%", $1}'` \
@@ -44,17 +49,15 @@
 	$'\n#Connection TCP:' `netstat -an | grep ESTABLISHED |  wc -l` "ESTABLISHED" \
 	$'\n#User log:' `who | wc -l` \
 	$'\nNetwork: IP' `hostname -I`"("`ip a | grep link/ether | awk '{print $2}'`")" \
-	$'\n#Sudo :' `cat /var/log/sudo/sudo.log | grep COMMAND | wc -l` "cmd"
-
+	$'\n#Sudo:' `cat /var/log/sudo/sudo.log | grep COMMAND | wc -l` "cmd"
 
 ## Скрипт для сервиса Cron:
 ##### $ crontab -e
 	*/10 * * * * bash /usr/local/bin/monitoring.sh // запускает скрипт каждые 10 мин.
-	* * * * * /usr/local/bin/monitoring.sh // запускает скрипт кадую минуту
+	* * * * * bash /usr/local/bin/monitoring.sh // запускает скрипт кадую минуту
 	* * * * * ( sleep 15 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 15 сек.
 	* * * * * ( sleep 30 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 30 сек.
 	* * * * * ( sleep 45 ; /usr/local/bin/monitoring.sh ) // запускает скрипт каждую минуту с задержкой на 45 сек.
-
 
 ## Политика паролей:
 ##### $ nano /etc/pam.d/common-password
